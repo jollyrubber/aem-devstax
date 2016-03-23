@@ -1,0 +1,10 @@
+{
+    "chef_type": "role",
+    "name": "aem-dev",
+    "json_class": "Chef::Role",
+    "description": "AEM 5.6.1 author instance",
+    "run_list": [
+        "role[aem561-author]",
+        "recipe[aem-devstax::dev-packages]"
+    ]
+}

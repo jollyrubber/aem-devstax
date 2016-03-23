@@ -1,0 +1,9 @@
+# aem jar and license files
+aem/
+
+# Vagrant + Chef
+.vagrant/
+Berksfile.lock
+
+# cookbooks downloaded by knife solo
+cookbooks/

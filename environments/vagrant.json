@@ -1,0 +1,53 @@
+{
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "name": "vagrant",
+    "description": "",
+    "override_attributes": {
+        "yum-epel": {
+            "repositories": ["epel", "epel-apache-maven", "nux-dextop"]
+        },
+        "yum": {
+            "epel-apache-maven": {
+                "repositoryid": "epel-apache-maven",
+                "description": "maven from apache foundation.",
+                "baseurl": "http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-$releasever/$basearch/",
+                "skip_if_unavailable": true,
+                "gpgcheck": false,
+                "enabled": true,
+                "managed": true
+            },
+            "nux-dextop": {
+                "repositoryid": "nux-dextop",
+                "description": "Nux.Ro RPMs for general desktop use",
+                "baseurl": "http://li.nux.ro/download/nux/dextop/el7/$basearch/ http://mirror.li.nux.ro/li.nux.ro/nux/dextop/el7/$basearch/",
+                "gpgkey": "http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro",
+                "gpgcheck": true,
+                "enabled": true,
+                "managed": true
+            }
+        },
+        "java": {
+            "install_flavor": "oracle",
+            "jdk_version": "8",
+            "oracle": {
+                "accept_oracle_download_terms": true
+            }
+        },
+        "aem": {
+            "version": "5.6.1",
+            "download_url": "file:///vagrant/aem/cq-quickstart-5.6.1.jar",
+            "license_url": "file:///vagrant/aem/license.properties",
+            "author": {
+                "startup": {
+                    "max_attempts": 60
+                },
+                "jvm_opts": {
+                    "-Dsling.run.modes=author,dev,local": "set run modes",
+                    "-agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=n": "enable remote debugging",
+                    "-Xms1024M -Xmx2048M -XX:MaxPermSize=512M": "prevent the process from forking"
+                }
+            }
+        }
+    }
+}
