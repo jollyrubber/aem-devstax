@@ -7,3 +7,10 @@ Berksfile.lock
 
 # cookbooks downloaded by knife solo
 cookbooks/
+
+# Eclipse
+.classpath
+.factorypath
+.project
+.apt_generated/
+.settings/
