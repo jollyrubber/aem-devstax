@@ -5,18 +5,9 @@
     "description": "",
     "override_attributes": {
         "yum-epel": {
-            "repositories": ["epel", "epel-apache-maven", "nux-dextop"]
+            "repositories": ["epel", "nux-dextop"]
         },
         "yum": {
-            "epel-apache-maven": {
-                "repositoryid": "epel-apache-maven",
-                "description": "maven from apache foundation.",
-                "baseurl": "http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-$releasever/$basearch/",
-                "skip_if_unavailable": true,
-                "gpgcheck": false,
-                "enabled": true,
-                "managed": true
-            },
             "nux-dextop": {
                 "repositoryid": "nux-dextop",
                 "description": "Nux.Ro RPMs for general desktop use",

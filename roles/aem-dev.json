@@ -2,7 +2,7 @@
     "chef_type": "role",
     "name": "aem-dev",
     "json_class": "Chef::Role",
-    "description": "AEM 5.6.1 author instance",
+    "description": "AEM 5.6.1 author instance and tools for development",
     "run_list": [
         "role[aem561-author]",
         "recipe[aem-devstax::dev-packages]"
