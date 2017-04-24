@@ -1,6 +1,0 @@
-{
-    "run_list": [
-        "role[aem561-author]",
-        "role[aem561-publish]"
-    ]
-}

@@ -1,0 +1,10 @@
+{
+    "chef_type": "role",
+    "name": "aem-dispatcher",
+    "json_class": "Chef::Role",
+    "description": "AEM dispatcher",
+    "run_list": [
+        "recipe[aem::dispatcher]",
+        "recipe[aem-devstax::dispatcher]"
+    ]
+}

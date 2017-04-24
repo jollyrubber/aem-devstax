@@ -1,8 +1,8 @@
 {
     "chef_type": "role",
-    "name": "aem561-author",
+    "name": "aem-author",
     "json_class": "Chef::Role",
-    "description": "AEM 5.6.1 author instance",
+    "description": "AEM author instance",
     "run_list": [
         "recipe[yum-epel]",
         "recipe[aem-devstax::media-packages]",

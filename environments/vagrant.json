@@ -5,7 +5,7 @@
     "description": "",
     "override_attributes": {
         "yum-epel": {
-            "repositories": ["epel", "nux-dextop"]
+            "repos": ["epel", "nux-dextop"]
         },
         "yum": {
             "nux-dextop": {
@@ -26,8 +26,8 @@
             }
         },
         "aem": {
-            "version": "5.6.1",
-            "download_url": "file:///vagrant/aem/cq-quickstart-5.6.1.jar",
+            "version": "6.2",
+            "download_url": "file:///vagrant/aem/aem-quickstart-6.2.jar",
             "license_url": "file:///vagrant/aem/license.properties",
             "author": {
                 "startup": {
@@ -38,7 +38,30 @@
                     "-agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=n": "enable remote debugging",
                     "-Xms1024M -Xmx2048M -XX:MaxPermSize=512M": "prevent the process from forking"
                 }
+            },
+            "publish": {
+                "startup": {
+                    "max_attempts": 60
+                },
+                "jvm_opts": {
+                    "-Dsling.run.modes=publish,dev,local": "set run modes",
+                    "-agentlib:jdwp=transport=dt_socket,address=30304,server=y,suspend=n": "enable remote debugging",
+                    "-Xms1024M -Xmx2048M -XX:MaxPermSize=512M": "prevent the process from forking"
+                }
+            },
+            "dispatcher": {
+                "farm_name": "aem-vagrant_local",
+                "server_name": "aem-vagrant",
+                "listen_port": "8000",
+                "virtual_hosts": [ "aem-vagrant" ],
+                "dispatcher_file_cookbook": "aem-devstax",
+                "webserver_type": "apache2.4",
+                "version": "linux-x86-64-ssl-4.2.2",
+                "use_processed_url": "1"
             }
+        },
+        "apache": {
+            "listen": [ "*:8000", "*:443" ]
         }
     }
 }

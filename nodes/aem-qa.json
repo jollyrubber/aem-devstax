@@ -1,0 +1,8 @@
+{
+  "name": "aem-qa",
+  "chef_environment": "qa",
+    "run_list": [
+        "role[aem-author]",
+        "role[aem-publish]"
+    ]
+}

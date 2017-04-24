@@ -1,0 +1,11 @@
+{
+    "chef_type": "role",
+    "name": "aem-developer",
+    "json_class": "Chef::Role",
+    "description": "AEM developer tools",
+    "run_list": [
+        "recipe[yum-epel]",
+        "recipe[aem-devstax::maven]",
+        "recipe[aem-devstax::dev-packages]"
+    ]
+}
