@@ -35,8 +35,8 @@
         # content
         /1000 { /type "allow" /glob "GET /*.html* *" }
         /1001 { /type "allow" /glob "GET /libs/granite/csrf/token.json *" }
-        /1002 { /type "deny" /glob "* /content* *" }
-        /1003 { /type "allow" /glob "GET /content/dam/* *" }
+        /1002 { /type "allow" /glob "GET * *.jpeg *" }
+        /1003 { /type "allow" /glob "GET * *.woff* *" }
     }
     /cache
     {
