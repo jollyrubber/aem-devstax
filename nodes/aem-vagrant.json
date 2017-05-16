@@ -1,6 +1,6 @@
 {
-  "name": "aem-vagrant",
-  "chef_environment": "vagrant",
+    "name": "aem-vagrant",
+    "chef_environment": "vagrant",
     "run_list": [
         "role[aem-author]",
         "role[aem-publish]",
